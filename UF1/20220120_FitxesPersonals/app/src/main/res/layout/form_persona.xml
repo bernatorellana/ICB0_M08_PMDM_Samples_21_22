@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <EditText
+        android:layout_marginBottom="10dp"
+        android:id="@+id/edtNom"
+        android:hint="Nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+    <EditText
+        android:layout_marginBottom="10dp"
+        android:id="@+id/edtCognom"
+        android:hint="Cognom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:layout_marginBottom="10dp"
+        android:id="@+id/edtTelefon"
+        android:hint="Telefon"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:layout_marginBottom="10dp"
+        android:id="@+id/edtMail"
+        android:hint="Mail"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <RadioGroup
+        android:id="@+id/rdgSexe"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RadioButton android:id="@+id/rbDona"
+            android:text="♀"
+            android:textSize="40dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></RadioButton>
+        <RadioButton
+            android:id="@+id/rbHome"
+            android:text="♂"
+            android:textSize="40dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></RadioButton>
+        <RadioButton android:id="@+id/rbNB"
+            android:text="NB"
+            android:textSize="30dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></RadioButton>
+    </RadioGroup>
+    <Spinner
+        android:id="@+id/spnPais"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+    <CheckBox
+        android:layout_gravity="center"
+        android:text="Actiu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </CheckBox>
+</LinearLayout>

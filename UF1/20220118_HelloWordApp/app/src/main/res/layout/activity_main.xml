@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/rosa_sang"
+    android:padding="10dp">
+
+    <TextView
+        android:text="Hello World!"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+    <TextView
+        android:id="@+id/txvMissatge"
+        android:text="@string/hello_word"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+    <EditText
+        android:background="@drawable/marc"
+        android:id="@+id/edtMissatge"
+        android:layout_width="match_parent"
+        android:hint="Introduïu edat"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:id="@+id/edtMissatge2"
+        android:background="@drawable/marc"
+        android:layout_width="match_parent"
+        android:hint="Introduïu edat"
+        android:layout_height="wrap_content"></EditText>
+    <Button
+        android:id="@+id/btnGo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/go"></Button>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fondo"></ImageView>
+</LinearLayout>
