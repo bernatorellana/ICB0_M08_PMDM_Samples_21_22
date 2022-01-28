@@ -1,79 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:layout_marginBottom="10dp"
-        android:id="@+id/edtNom"
-        android:hint="Nom"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-    />
-    <EditText
-        android:layout_marginBottom="10dp"
-        android:id="@+id/edtCognom"
-        android:hint="Cognom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <EditText
-        android:layout_marginBottom="10dp"
-        android:id="@+id/edtTelefon"
-        android:hint="Telefon"
-        android:inputType="phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <EditText
-        android:layout_marginBottom="10dp"
-        android:id="@+id/edtMail"
-        android:hint="Mail"
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <RadioGroup
-        android:id="@+id/rdgSexe"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <RadioButton android:id="@+id/rbDona"
-            android:text="♀"
-            android:textSize="40dp"
-            android:layout_width="0dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/edtNom"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></RadioButton>
-        <RadioButton
-            android:id="@+id/rbHome"
-            android:text="♂"
-            android:textSize="40dp"
-            android:layout_width="0dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Nom" />
+
+        <EditText
+            android:id="@+id/edtCognom"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></RadioButton>
-        <RadioButton android:id="@+id/rbNB"
-            android:text="NB"
-            android:textSize="30dp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"></RadioButton>
-    </RadioGroup>
-    <Spinner
-        android:id="@+id/spnPais"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:layout_marginBottom="10dp"
+            android:hint="Cognom" />
 
-    </Spinner>
-    <CheckBox
-        android:layout_gravity="center"
-        android:text="Actiu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtTelefon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Telefon"
+            android:inputType="phone" />
 
-    </CheckBox>
-</LinearLayout>
+        <EditText
+            android:id="@+id/edtMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Mail"
+            android:inputType="textEmailAddress" />
+
+        <RadioGroup
+            android:id="@+id/rdgSexe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbDona"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="♀"
+                android:textSize="40dp"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/rbHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="♂"
+                android:textSize="40dp"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/rbNB"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="NB"
+                android:textSize="30dp"></RadioButton>
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spnPais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+        </Spinner>
+
+        <CheckBox
+            android:id="@+id/chkActiu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Actiu">
+
+        </CheckBox>
+    </LinearLayout>
+</ScrollView>

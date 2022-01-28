@@ -15,9 +15,9 @@ public class Persona {
                     "Paco",
                     "Maroto",
                     R.drawable.img,
-                    "paco@maroto.com","600123122", Sexe.HOME,
-                    false,
-                    Pais.getPaisos().get(0)
+                    "paco@maroto.com","600123122", Sexe.NO_BINARI,
+                    true,
+                    Pais.getPaisos().get(1)
             ));
         }
         return sPersones;
@@ -90,7 +90,7 @@ public class Persona {
         this.mSexe = mSexe;
     }
 
-    public boolean ismEsActiu() {
+    public boolean isEsActiu() {
         return mEsActiu;
     }
 

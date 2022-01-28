@@ -45,4 +45,9 @@ public class Pais {
     public void setNom(String mNom) {
         this.mNom = mNom;
     }
+
+    @Override
+    public String toString() {
+        return  mNom;
+    }
 }
