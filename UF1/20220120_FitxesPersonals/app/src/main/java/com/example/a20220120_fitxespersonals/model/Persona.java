@@ -19,6 +19,14 @@ public class Persona {
                     true,
                     Pais.getPaisos().get(1)
             ));
+            sPersones.add(new Persona(
+                    "Pepa",
+                    "Sans",
+                    R.drawable.img,
+                    "pepa@sans.com","600123122", Sexe.DONA,
+                    false,
+                    Pais.getPaisos().get(0)
+            ));
         }
         return sPersones;
     }
