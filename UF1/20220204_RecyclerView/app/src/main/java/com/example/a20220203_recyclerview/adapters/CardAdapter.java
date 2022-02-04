@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a20220203_recyclerview.R;
 import com.example.a20220203_recyclerview.model.Card;
+import com.example.a20220203_recyclerview.model.Rarity;
 
 import java.util.List;
 
@@ -24,11 +25,20 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         mCardList = Card.getCartes();
     }
 
+
+
+    @Override
+    public int getItemViewType(int position) {
+        return mCardList.get(position).getRarity()== Rarity.EPIC?1:0;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        int idLayout = (viewType==0)?R.layout.fila:R.layout.fila_epic;
         View fila = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.fila,
+                idLayout,
                 parent,false);
 
         //----------------------------------------------------
