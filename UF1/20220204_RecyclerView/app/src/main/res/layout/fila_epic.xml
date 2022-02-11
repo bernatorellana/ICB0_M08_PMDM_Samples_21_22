@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView android:src="@drawable/background"
+            android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:tintMode="multiply"
+            android:tint="@color/teal_200"
+            android:layout_alignTop="@+id/grdLayout"
+            android:layout_alignBottom="@+id/grdLayout"
+            android:layout_alignLeft="@+id/grdLayout"
+            android:layout_alignRight="@+id/grdLayout"
+        />
+
+
     <GridLayout
+        android:id="@+id/grdLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:columnCount="4"
         android:rowCount="3"
         android:padding="20dp"
-        android:background="@color/violat"
         >
 
         <ImageView android:id="@+id/imvPhoto"
@@ -26,7 +42,7 @@
             android:id="@+id/txvNom"
             android:layout_height="0dp"
             android:layout_width="0dp"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textFontWeight="1800"
             android:textStyle="bold"
             android:textSize="18dp"
@@ -51,7 +67,7 @@
                 android:id="@+id/txvDesc"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="#444444"
+                android:textColor="#cccccc"
                 android:text="Don't let the little pony fool you. Prince gets a running start, you WILL be trampled. Deals double damage once he gets charging." ></TextView>
         </FrameLayout>
         <FrameLayout android:layout_columnWeight="1"
@@ -73,4 +89,4 @@
             android:text="5" ></TextView>
         </FrameLayout>
     </GridLayout>
-</FrameLayout>
+    </RelativeLayout>

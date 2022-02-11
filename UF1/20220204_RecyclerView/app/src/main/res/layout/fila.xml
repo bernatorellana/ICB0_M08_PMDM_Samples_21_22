@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+<GridLayout
+    android:id="@+id/grdLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -67,4 +75,9 @@
         android:paddingTop="5dp"
         android:text="5" ></TextView>
     </FrameLayout>
+
 </GridLayout>
+<View android:background="@drawable/linia"
+    android:layout_width="match_parent"
+    android:layout_column="0" android:layout_row="0" android:layout_height="4dp"> </View>
+</LinearLayout>

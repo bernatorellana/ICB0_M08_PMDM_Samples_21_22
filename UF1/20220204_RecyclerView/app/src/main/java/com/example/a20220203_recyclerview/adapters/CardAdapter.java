@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -78,9 +79,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         holder.imvPhoto.setImageResource(c.getDrawable());
         holder.txvElixirCost.setText(""+c.getElixirCost());
         if(c.isSelected()) {
-            holder.itemView.setBackgroundColor(Color.RED);
+            holder.grdLayout.setBackgroundColor(Color.argb(128,200,0,0));
         } else {
-            holder.itemView.setBackgroundColor(Color.WHITE);
+            holder.grdLayout.setBackgroundColor(Color.TRANSPARENT);
         }
     }
 
@@ -94,13 +95,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         public ImageView imvPhoto ;
         public TextView txvDesc;
         public TextView txvElixirCost;
-
+        public GridLayout grdLayout;
         public ViewHolder(@NonNull View fila) {
             super(fila);
             txvNom = fila.findViewById(R.id.txvNom);
             imvPhoto = fila.findViewById(R.id.imvPhoto);
             txvDesc= fila.findViewById(R.id.txvDesc);
             txvElixirCost= fila.findViewById(R.id.txvElixirCost);
+            grdLayout = fila.findViewById(R.id.grdLayout);
         }
     }
 }
