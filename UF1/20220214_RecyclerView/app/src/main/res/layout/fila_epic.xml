@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView android:src="@drawable/background"
+            android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:tintMode="multiply"
+            android:tint="@color/teal_200"
+            android:layout_alignTop="@+id/grdLayout"
+            android:layout_alignBottom="@+id/grdLayout"
+            android:layout_alignLeft="@+id/grdLayout"
+            android:layout_alignRight="@+id/grdLayout"
+        />
+
+
+    <GridLayout
+        android:id="@+id/grdLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:columnCount="4"
+        android:rowCount="3"
+        android:padding="20dp"
+        >
+
+        <ImageView android:id="@+id/imvPhoto"
+            android:src="@drawable/giant"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:scaleType="center"
+            android:layout_rowSpan="2"
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/txvNom"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:textColor="#ffffff"
+            android:textFontWeight="1800"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:gravity="bottom"
+            android:layout_columnWeight="3"
+            android:layout_rowWeight="1"
+            android:background="@drawable/border_sota"
+            android:text="PRINCE" ></TextView>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_columnSpan="2"
+            >
+                <TextView
+                android:id="@+id/txvDesc"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="#cccccc"
+                android:text="Don't let the little pony fool you. Prince gets a running start, you WILL be trampled. Deals double damage once he gets charging." ></TextView>
+        </FrameLayout>
+        <FrameLayout android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_column="1"
+            android:layout_row="0">
+        <TextView
+            android:background="@drawable/elixir_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:lineHeight="40dp"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/txvElixirCost"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:text="5" ></TextView>
+        </FrameLayout>
+    </GridLayout>
+    </RelativeLayout>
