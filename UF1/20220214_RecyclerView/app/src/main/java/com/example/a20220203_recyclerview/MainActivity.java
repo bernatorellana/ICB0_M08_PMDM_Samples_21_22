@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         // Create global configuration and initialize ImageLoader with this config
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
 			.defaultDisplayImageOptions(options)
+            .memoryCacheSize(16000)
+            .threadPoolSize(6)
+            .diskCacheSize(20000)
 			.build();
         ImageLoader.getInstance().init(config);
     }

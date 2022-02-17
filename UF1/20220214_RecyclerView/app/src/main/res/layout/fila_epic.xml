@@ -8,8 +8,8 @@
 
         <ImageView android:src="@drawable/background"
             android:scaleType="centerCrop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:tintMode="multiply"
             android:tint="@color/teal_200"
             android:layout_alignTop="@+id/grdLayout"
@@ -32,13 +32,13 @@
         <ImageView android:id="@+id/imvPhoto"
             android:src="@drawable/giant"
             android:layout_height="wrap_content"
-            android:layout_width="100dp"
-            android:layout_column="2"
+            android:layout_width="120dp"
+            android:minHeight="140dp"
+            android:layout_column="0"
             android:layout_row="0"
-            android:scaleType="center"
             android:layout_rowSpan="2"
+            android:scaleType="centerCrop"
             ></ImageView>
-
         <TextView
             android:id="@+id/txvNom"
             android:layout_height="0dp"
@@ -47,7 +47,7 @@
             android:textFontWeight="1800"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:layout_column="0"
+            android:layout_column="1"
             android:layout_row="0"
             android:gravity="bottom"
             android:layout_columnWeight="3"
@@ -60,9 +60,10 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_height="0dp"
-            android:layout_column="0"
+            android:layout_column="1"
             android:layout_row="1"
             android:layout_columnSpan="2"
+            android:padding="10dp"
             >
                 <TextView
                 android:id="@+id/txvDesc"
