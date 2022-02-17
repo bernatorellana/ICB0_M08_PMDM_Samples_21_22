@@ -7,11 +7,6 @@
         android:icon="@drawable/ic_baseline_delete_forever_24"
         app:showAsAction="ifRoom"/>
 
-    <item android:title="Edit"
-        android:id="@+id/mniEdit"
-        android:icon="@drawable/ic_baseline_edit_24"
-        app:showAsAction="ifRoom"/>
-
     <item
         android:id="@+id/mniSearch"
         android:icon="@drawable/ic_search_black_24dp"

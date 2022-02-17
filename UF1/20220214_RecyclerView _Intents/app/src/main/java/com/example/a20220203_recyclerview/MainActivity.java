@@ -1,7 +1,6 @@
 package com.example.a20220203_recyclerview;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -9,19 +8,17 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.a20220203_recyclerview.adapters.CardAdapter;
-import com.example.a20220203_recyclerview.model.Card;
 import com.example.a20220203_recyclerview.touch.ItemTouchHelperCallback;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
@@ -95,31 +92,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
             case R.id.mniDelete:{
                 mCardAdapter.deleteCard();
             }break;
-            case R.id.mniEdit: {
-
-                Card c = mCardAdapter.getSelectedCard();
-                Intent i = new Intent(this,EdicioActivity.class);
-//                i.putExtra("nom", c.getName());
-//                i.putExtra("desc", c.getDesc());
-                i.putExtra(EdicioActivity.PARAM_CARD,c);
-                i.putExtra(EdicioActivity.PARAM_IDX, mCardAdapter.getSelectedIndex());
-                //startActivity(i);
-                startActivityForResult(i,0);
-            }
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(resultCode == Activity.RESULT_OK) {
-            mCardAdapter.notifyItemChanged(mCardAdapter.getSelectedIndex());
-        }
-
-
     }
 
     @Override

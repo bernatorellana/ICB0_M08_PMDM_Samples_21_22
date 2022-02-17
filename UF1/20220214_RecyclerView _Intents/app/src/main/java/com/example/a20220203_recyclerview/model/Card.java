@@ -1,16 +1,12 @@
 package com.example.a20220203_recyclerview.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.example.a20220203_recyclerview.R;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Card implements Parcelable
+public class Card
 {
     Rarity rarity;
     int id;
@@ -20,7 +16,6 @@ public class Card implements Parcelable
     int elixirCost;
     boolean selected;
     String imageURL;
-
 
     public Card(int id,  String nom, Rarity raresa, String imageURL,  String desc, int elixirCost) {
         this.rarity = raresa;
@@ -33,29 +28,9 @@ public class Card implements Parcelable
     }
     
     private static ArrayList<Card> _cartes ;
-
-
-    protected Card(Parcel in) {
-        id = in.readInt();
-        name = in.readString();
-        desc = in.readString();
-        elixirCost = in.readInt();
-        selected = in.readByte() != 0;
-        imageURL = in.readString();
-    }
-
-    public static final Creator<Card> CREATOR = new Creator<Card>() {
-        @Override
-        public Card createFromParcel(Parcel in) {
-            return new Card(in);
-        }
-
-        @Override
-        public Card[] newArray(int size) {
-            return new Card[size];
-        }
-    };
-
+    
+    
+    
     public static List<Card> getCartes(){
 
         if(_cartes==null) {
@@ -146,20 +121,5 @@ public class Card implements Parcelable
 
     public void switchSelected() {
         this.selected = !selected;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeString(name);
-        dest.writeString(desc);
-        dest.writeInt(elixirCost);
-        dest.writeByte((byte) (selected ? 1 : 0));
-        dest.writeString(imageURL);
     }
 }

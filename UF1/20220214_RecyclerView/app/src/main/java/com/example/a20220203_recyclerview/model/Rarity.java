@@ -1,4 +1,5 @@
 package com.example.a20220203_recyclerview.model;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -6,7 +7,7 @@ import java.util.List;
  *
  * @author Usuari
  */
-public enum Rarity {
+public enum Rarity implements Serializable {
     COMMON,
     RARE,
     EPIC;    

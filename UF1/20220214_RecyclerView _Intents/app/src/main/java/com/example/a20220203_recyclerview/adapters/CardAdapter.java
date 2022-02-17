@@ -129,15 +129,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>
         notifyItemRemoved(toDelete);
     }
 
-    public Card getSelectedCard() {
-        if(mPosSeleccionada==-1) return null;
-        else return mCardList.get(mPosSeleccionada);
-    }
-
-    public int getSelectedIndex() {
-        return mPosSeleccionada;
-    }
-
     //---------------------------------------------------------
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txvNom;
