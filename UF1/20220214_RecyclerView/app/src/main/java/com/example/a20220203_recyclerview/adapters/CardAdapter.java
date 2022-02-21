@@ -83,7 +83,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>
         holder.txvNom.setText(c.getName());
         holder.txvDesc.setText(c.getDesc());
         //holder.imvPhoto.setImageResource(c.getDrawable());
-        mImageLoader.displayImage(c.getImageURL(), holder.imvPhoto);
+        if(c.getImageURL()!=null) {
+            mImageLoader.displayImage(c.getImageURL(), holder.imvPhoto);
+        } else {
+            holder.imvPhoto.setImageBitmap(c.getBitmap());
+        }
 
         holder.txvElixirCost.setText(""+c.getElixirCost());
         if(c.isSelected()) {

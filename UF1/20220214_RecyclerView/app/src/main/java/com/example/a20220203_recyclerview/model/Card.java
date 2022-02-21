@@ -1,5 +1,6 @@
 package com.example.a20220203_recyclerview.model;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -21,6 +22,17 @@ public class Card implements Parcelable
     boolean selected;
     String imageURL;
 
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+        imageURL = null;
+    }
+
+    Bitmap bitmap;
+
 
     public Card(int id,  String nom, Rarity raresa, String imageURL,  String desc, int elixirCost) {
         this.rarity = raresa;
@@ -28,6 +40,7 @@ public class Card implements Parcelable
         this.name = nom;
         //this.drawable = drawable;
         this.imageURL = imageURL;
+        this.bitmap = null;
         this.desc = desc;
         this.elixirCost = elixirCost;
     }

@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Debug;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +28,8 @@ public class EdicioActivity extends AppCompatActivity implements View.OnClickLis
     Button btnPhoto;
     Button  btnSave;
     int indexCarta;
+    //-----------------
+    private Bitmap thumbnail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,12 @@ public class EdicioActivity extends AppCompatActivity implements View.OnClickLis
         edtDesc.setText(c.getDesc());
         //-------------------------------------
         btnSave.setOnClickListener(this);
+        btnPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                capturePhoto();
+            }
+        });
 
     }
 
@@ -56,8 +68,36 @@ public class EdicioActivity extends AppCompatActivity implements View.OnClickLis
             Card c = Card.getCartes().get(indexCarta);
             c.setDesc(edtDesc.getText().toString());
             c.setName(edtNom.getText().toString());
+            if(thumbnail!=null) {
+                c.setBitmap(thumbnail);
+            }
         }
         setResult(Activity.RESULT_OK);
         finish(); // tanca l'Activity i torna a l'anterior
+    }
+
+
+
+    //------------------------------------------------
+    // Gestió de l'Intent de Càmera
+    //------------------------------------------------
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    public void capturePhoto() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Log.d("Aplicacio", "Passo a dins????");
+        //if (intent.resolveActivity(getPackageManager()) != null) {
+            Log.d("Aplicacio", "SIIII Passo a dins");
+            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+        //}
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            thumbnail = data.getParcelableExtra("data");
+            imvFoto.setImageBitmap(thumbnail);
+        }
     }
 }
