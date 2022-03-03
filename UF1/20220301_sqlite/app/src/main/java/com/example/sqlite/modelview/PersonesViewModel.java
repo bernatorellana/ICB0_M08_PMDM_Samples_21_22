@@ -20,28 +20,26 @@ import java.util.concurrent.Executors;
 
 
 
-public class PersonesModelView extends AndroidViewModel {
+public class PersonesViewModel extends AndroidViewModel {
 
     MutableLiveData<List<Persona>> mPersones = new MutableLiveData<List<Persona>>();
 
 
-    public PersonesModelView(@NonNull Application application) {
+    public PersonesViewModel(@NonNull Application application) {
         super(application);
 
         ExecutorService executorService = Executors.newFixedThreadPool(4);
-            executorService.execute(new Runnable() {
-                @Override
-                public void run() {
-                    loadData(application);
-
-                }
-            });
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                loadData(application);
+            }
+        });
     }
 
     private  final String DB_NAME = "mydb";
 
     private void loadData(Application a){
-
 
         DatabaseHelper dbh = new DatabaseHelper(a, DB_NAME,1);
         SQLiteDatabase db =  dbh.getReadableDatabase();

@@ -19,17 +19,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-
+            /*
             String script = ScriptHelper.loadScript(mContext, "script.sql");
             TextUtils.StringSplitter splitter = new TextUtils.SimpleStringSplitter(';');
-
             // Once per string to split
             splitter.setString(script);
             for (String s : splitter) {
                 db.execSQL(s);
-            }
+            }*/
 
-/*            Log.d("BERNAT","onCreate DB");
+            Log.d("BERNAT","onCreate DB");
 
             // Creació directa d'una taula
             db.execSQL("CREATE TABLE persona ( "+
@@ -57,7 +56,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             db.execSQL("insert into persona values(null, ?, ?)",
                     new String[]{"Maria Cano", "234.3"});
-                    */
+
+            Log.d("BERNAT","onCreate finished DB");
+
         }
         catch(Exception e){
             Log.e("BERNAT", e.getMessage());

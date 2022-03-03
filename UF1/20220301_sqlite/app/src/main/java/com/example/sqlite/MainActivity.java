@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.sqlite.model.Persona;
-import com.example.sqlite.modelview.PersonesModelView;
+import com.example.sqlite.modelview.PersonesViewModel;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final PersonesModelView viewModel = new ViewModelProvider(this).get(PersonesModelView.class);
+        final PersonesViewModel viewModel = new ViewModelProvider(this).get(PersonesViewModel.class);
         viewModel.getPersones().observe(this, new Observer<List<Persona>>() {
             @Override
             public void onChanged(List<Persona> persones) {
