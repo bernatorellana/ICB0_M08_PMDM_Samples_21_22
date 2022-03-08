@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout-land/fragment_detail.xml" value="0.24387040280210157" />
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout-land/fragment_list.xml" value="0.19439579684763572" />
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout/activity_main.xml" value="0.31521739130434784" />
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout/content_main.xml" value="0.31521739130434784" />
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout/fragment_detail.xml" value="0.23125" />
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout/fragment_list.xml" value="0.23125" />
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout/list_fragment.xml" value="0.2115036231884058" />
+        <entry key="..\:/Docencia/Material_Moduls/M8_PMDM/gitRepo/2021_22/ICB0_M08_PMDM_Samples_21_22/UF1/20220307_Fragments/app/src/main/res/layout/row.xml" value="0.23125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
