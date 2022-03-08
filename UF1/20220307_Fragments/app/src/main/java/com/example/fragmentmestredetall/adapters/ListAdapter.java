@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragmentmestredetall.ListFragment;
 import com.example.fragmentmestredetall.R;
+import com.example.fragmentmestredetall.network.Pokemon;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,15 +21,17 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>  {
 
-    private List<String> persones = Arrays.asList("Paco", "Maite", "Marta", "Joan");
+    //private List<String> persones = Arrays.asList("Paco", "Maite", "Marta", "Joan");
+    List<Pokemon> pokemons;
     private OnListClick onListClickListener;
 
     public interface OnListClick {
         void onItemListClicked(int position);
     }
 
-    public ListAdapter(OnListClick listener) {
+    public ListAdapter(OnListClick listener, List<Pokemon> pokemons) {
         onListClickListener = listener;
+        this.pokemons = pokemons;
     }
 
 
@@ -47,7 +50,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>  {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txvNom.setText( persones.get(position));
+        holder.txvNom.setText( pokemons.get(position).getName());
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +67,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>  {
 
     @Override
     public int getItemCount() {
-        return persones.size();
+        return pokemons.size();
     }
 
 

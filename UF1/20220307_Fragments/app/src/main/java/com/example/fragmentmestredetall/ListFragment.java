@@ -1,12 +1,15 @@
 package com.example.fragmentmestredetall;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,11 +17,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.fragmentmestredetall.adapters.ListAdapter;
 import com.example.fragmentmestredetall.databinding.FragmentListBinding;
+import com.example.fragmentmestredetall.network.Pokemon;
+import com.example.fragmentmestredetall.viewmodel.PokemonViewModel;
+
+import java.util.List;
 
 
 public class ListFragment extends Fragment implements ListAdapter.OnListClick {
 
     private FragmentListBinding binding;
+    private PokemonViewModel viewmodel;
 
     private View fragment;
     @Override
@@ -26,10 +34,22 @@ public class ListFragment extends Fragment implements ListAdapter.OnListClick {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
+        //------------------------------------------------------------
+        // Carreguem el Binding
         binding = FragmentListBinding.inflate(inflater, container, false);
+        //-------------------------------------------------------------
+        // Recupero el ViewModel del fragment
+        viewmodel = new ViewModelProvider(this).get(PokemonViewModel.class);
+        viewmodel.getPokemons().observe(ListFragment.this.getViewLifecycleOwner(), new Observer<List<Pokemon>>() {
+            @Override
+            public void onChanged(List<Pokemon> pokemons) {
+                ListAdapter adapter = new ListAdapter(ListFragment.this, pokemons);
+                Log.d("Bernat", "pokemons dowloaded:"+pokemons.size());
+                binding.rcyLlista.setAdapter(adapter);
+            }
+        });
 
-
+        //-------------------------------------------------------------
         return binding.getRoot();
 
     }
@@ -54,8 +74,7 @@ public class ListFragment extends Fragment implements ListAdapter.OnListClick {
         // Programem el recycler view
         binding.rcyLlista.setLayoutManager(
                 new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false));
-        ListAdapter adapter = new ListAdapter(this);
-        binding.rcyLlista.setAdapter(adapter);
+
     }
 
     @Override
