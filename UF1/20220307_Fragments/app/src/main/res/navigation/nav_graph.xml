@@ -14,6 +14,11 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/DetailFragment" />
+        <action
+            android:id="@+id/action_help"
+            app:destination="@id/helpFragment2"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/DetailFragment"
@@ -29,4 +34,9 @@
             app:argType="integer"
             android:defaultValue="-1" />
     </fragment>
+    <fragment
+        android:id="@+id/helpFragment2"
+        android:name="com.example.fragmentmestredetall.HelpFragment"
+        android:label="help_fragment"
+        tools:layout="@layout/help_fragment" />
 </navigation>

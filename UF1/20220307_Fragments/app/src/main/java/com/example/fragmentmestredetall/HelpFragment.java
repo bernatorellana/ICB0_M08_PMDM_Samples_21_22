@@ -12,9 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.fragmentmestredetall.databinding.FragmentListBinding;
+import com.example.fragmentmestredetall.databinding.HelpFragmentBinding;
+
 public class HelpFragment extends Fragment {
 
     private HelpViewModel mViewModel;
+    private HelpFragmentBinding binding;
 
     public static HelpFragment newInstance() {
         return new HelpFragment();
@@ -23,7 +27,14 @@ public class HelpFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.help_fragment, container, false);
+
+
+
+        //------------------------------------------------------------
+        // Carreguem el Binding
+        binding = HelpFragmentBinding.inflate(inflater, container, false);
+
+        return binding.getRoot();//inflater.inflate(R.layout.help_fragment, container, false);
     }
 
     @Override

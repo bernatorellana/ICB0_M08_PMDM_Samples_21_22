@@ -64,10 +64,8 @@ public class ListFragment extends Fragment implements ListAdapter.OnListClick {
             @Override
             public void onClick(View view) {
 
-                Bundle args = new Bundle();
-                args.putInt("item_id", 3);
                 NavHostFragment.findNavController(ListFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment,args);
+                        .navigate(R.id.action_help);
             }
         });
         //-----------------------------------
